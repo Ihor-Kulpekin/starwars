@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import logo from '../../logo.png';
 import Navbar from '../Navbar/Navbar';
 import { Wrapper } from '../../styled-components/styled-components';
+import { NavLink } from "react-router-dom";
 
 const WrapperHeader = styled(Wrapper)`
   margin-bottom: 50px;
@@ -27,7 +28,9 @@ const HeaderDesktop = () => {
       <HeaderTop>
         <img src={logo} alt="logo" className="img" />
         <div>
-          <a>Log in</a>
+          <NavLink to="/login">
+            Log in
+          </NavLink>
         </div>
       </HeaderTop>
       <Navbar />
