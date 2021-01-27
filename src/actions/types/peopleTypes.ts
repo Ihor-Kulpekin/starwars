@@ -2,6 +2,7 @@ import { FilmsTypes } from './filmsTypes';
 import { SpeciesTypes } from './speciesTypes';
 import { VehiclesTypes } from './vehiclesTypes';
 import { StarshipsTypes } from './starshipsTypes';
+import { BasicType } from './basicType';
 
 export interface PeopleTypes {
   name: string,
@@ -20,4 +21,8 @@ export interface PeopleTypes {
   created: string,
   edited: string,
   url: string
+}
+
+export interface PeopleStateType extends BasicType{
+  people: FilmsTypes[],
 }

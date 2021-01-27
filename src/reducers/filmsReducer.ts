@@ -21,7 +21,6 @@ export default function films(state = initialState, action: any) {
     }
     case ActionTypes.GET_FILMS_SUCCESS:{
       const {films, count, previous, next} = action;
-      console.log('films', films)
       return {
         ...state,
         loading: false,

@@ -1,17 +1,21 @@
-const getData = async (url:string) => {
+const getData = async (url:string, search?: string) => {
+  if (search) {
+    url += '?search=' + encodeURIComponent(search)
+  }
+
   const response = await fetch(url);
   return await response.json()
 };
 
 export const getFilms = async (search?: string) => {
-  let url = 'https://swapi.dev/api/films/';
-
-  if (search) {
-    url += '?search=' + encodeURIComponent(search)
-  }
-
-  return await getData(url);
+  const url = 'https://swapi.dev/api/films'
+  return await getData(url, search);
 };
+
+export const getPeople = async (search?: string) =>{
+  const url = 'https://swapi.dev/api/people/'
+  return await getData(url, search);
+}
 
 export const changePage = async (value: string) => {
   return await getData(value);

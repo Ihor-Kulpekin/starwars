@@ -1,4 +1,5 @@
 import { PeopleTypes } from './peopleTypes';
+import { BasicType } from './basicType';
 
 export interface FilmsTypes {
   title: string,
@@ -13,11 +14,6 @@ export interface FilmsTypes {
   url: string
 }
 
-export interface FilmsStateType {
-  films: FilmsTypes[],
-  loading: boolean,
-  error: boolean,
-  count: number,
-  next: string,
-  previous: string
+export interface FilmsStateType extends BasicType{
+  films: FilmsTypes[]
 }
