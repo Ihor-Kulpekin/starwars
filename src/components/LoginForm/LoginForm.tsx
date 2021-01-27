@@ -42,6 +42,7 @@ const Button = styled.button`
 `;
 
 interface LoginFormProps {
+  onSubmit: Function
   initialValues: {
     login: string;
     sublogin: string;
@@ -49,12 +50,12 @@ interface LoginFormProps {
   };
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ initialValues }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ initialValues, onSubmit }) => {
   return (
     <WrapperLoginForm>
       <div className="header_logo" />
       <h3 className="signInText">Sign In</h3>
-      <Formik initialValues={initialValues} onSubmit={(values) => console.log(values)}>
+      <Formik initialValues={initialValues} onSubmit={(values => onSubmit(values))}>
         {(props: any) => {
           const {
             values,
@@ -78,7 +79,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ initialValues }) => {
               />
               <Input
                 label="Sublogin"
-                name="Sublogin"
+                name="sublogin"
                 placeholder="Sublogin"
                 onBlur={handleBlur}
                 onChange={handleChange}

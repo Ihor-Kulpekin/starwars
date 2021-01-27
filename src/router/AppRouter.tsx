@@ -1,10 +1,9 @@
 import React from 'react';
 import {Switch} from 'react-router-dom';
 import { PublicRoute } from "./PublicRoute";
-import { PrivateRoute } from "./PrivateRoute";
-import ConsolePage from "../pages/ConsolePage";
 import LoginPage from "../pages/Login/LoginPage";
 import Landing from "../pages/Landing/Landing";
+import FilmsPage from '../pages/FilmsPage/FilmsPage';
 
 const AppRouter = () => (
     <Switch>
@@ -14,9 +13,12 @@ const AppRouter = () => (
       <PublicRoute path="/login" exact={true}>
         <LoginPage />
       </PublicRoute>
-      <PrivateRoute path="/console">
-        <ConsolePage />
-      </PrivateRoute>
+      <PublicRoute path="/films" exact={true}>
+        <FilmsPage />
+      </PublicRoute>
+      <PublicRoute path="/characters" exact={true}>
+        <FilmsPage />
+      </PublicRoute>
     </Switch>
 );
 

@@ -30,4 +30,8 @@ export const GlobalStyle = createGlobalStyle`
       color: #fff;
     }
   }
+  
+  ul {
+    list-style: none;
+  }
 `;

@@ -9,11 +9,11 @@ const StyledNavbar = styled.nav`
 
 const Navbar = () => (
   <StyledNavbar>
-    <NavbarItem title="films"/>
-    <NavbarItem title="people"/>
-    <NavbarItem title="starships"/>
-    <NavbarItem title="planets"/>
-    <NavbarItem title="vehicles"/>
+    <NavbarItem title="films" to="/films"/>
+    <NavbarItem title="people" to="/characters"/>
+    <NavbarItem title="starships" to="/starships"/>
+    <NavbarItem title="planets" to="/planets"/>
+    <NavbarItem title="vehicles" to="/vehicles"/>
   </StyledNavbar>
 )
 

@@ -1,9 +1,10 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
-const NavbarItem = ({title}:{title: string}) => (
-  <a>
+const NavbarItem = ({title, to}:{title: string, to: string}) => (
+  <NavLink to={to}>
     {title}
-  </a>
+  </NavLink>
 )
 
 export default NavbarItem;

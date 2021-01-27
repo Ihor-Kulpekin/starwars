@@ -8,6 +8,7 @@ import HeaderMobile from './HeaderMobile';
 const WrapperHeader = styled(Wrapper)`
   margin-bottom: 50px;
   padding: 10px;
+  text-align: center
 `;
 
 const Header = () => {

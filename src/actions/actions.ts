@@ -1,11 +1,31 @@
-import {createActions} from 'redux-actions';
+import { ActionTypes } from '../constantns/constants';
+import { FilmsTypes } from './types/filmsTypes';
 
-import {ActionTypes} from '../constantns/constants';
+export const getFilms = (search: string) => ({
+  type: ActionTypes.GET_FILMS,
+  search
+});
 
-export const {authenticate, authenticateSuccess, authenticateCheck, authenticateFailure, logout} = createActions({
-  [ActionTypes.AUTHENTICATE]: (payload) => payload,
-  [ActionTypes.AUTHENTICATE_CHECK]: (payload) => payload,
-  [ActionTypes.AUTHENTICATE_SUCCESS]: (payload) => payload,
-  [ActionTypes.AUTHENTICATE_FAILURE]: (payload) => payload,
-  [ActionTypes.LOGOUT]: (payload) => payload,
+export const getFilmsSuccess = ({
+  results,
+  count,
+  next,
+  previous
+}: {
+  results: FilmsTypes[];
+  count: number;
+  next: string;
+  previous: string;
+}) => {
+  return {
+    type: ActionTypes.GET_FILMS_SUCCESS,
+    films: results,
+    count,
+    next,
+    previous
+  }
+};
+
+export const getFilmsFailure = () => ({
+  type: typeof ActionTypes.GET_FILMS_FAILURE
 });

@@ -1,7 +1,10 @@
-import {all, fork} from 'redux-saga/effects';
-
-import login from '../sagas/auth';
+import { all, debounce } from 'redux-saga/effects';
+import filmsSaga from './filmsSaga';
+import {ActionTypes}  from '../constantns/constants';
 
 export default function* root() {
-  yield all([fork(login)]);
+  yield all([
+    // @ts-ignore
+     debounce(500, ActionTypes.GET_FILMS, filmsSaga)
+  ]);
 }

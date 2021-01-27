@@ -47,7 +47,7 @@ const About = () => (
   <StyledAbout>
     <img src={logo} alt="logo" className="img" />
     <div className="text">
-      Star wars app - it's an application for showing information about films, people, planets,
+      Star wars app - it's an application for showing information about films, characters, planets,
       starships, vehicles and information about specific planet, film and so on.
     </div>
   </StyledAbout>

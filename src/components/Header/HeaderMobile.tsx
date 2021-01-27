@@ -77,7 +77,7 @@ const HeaderMobile = () => {
         <div />
         <div />
       </StyledBurger>
-      <Image src={header_img} alt=""/>
+        <Image src={header_img} alt="header_img"/>
       <WrapperMenuMobile open={open}>
         <a href="#" className="menu-item">
           films
