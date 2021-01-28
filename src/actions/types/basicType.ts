@@ -5,3 +5,10 @@ export interface BasicType {
   next: string,
   previous: string
 }
+
+
+export interface BasicTypeObject {
+  created: string,
+  edited: string,
+  url: string
+}
