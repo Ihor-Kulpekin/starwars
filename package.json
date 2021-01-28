@@ -27,17 +27,24 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7",
     "@types/redux": "^3.6.0",
     "@types/redux-saga": "^0.10.5",
-    "@types/styled-components": "^5.1.7"
+    "@types/styled-components": "^5.1.7",
+    "ts-loader": "^8.0.14",
+    "webpack-cli": "^4.4.0",
+    "file-loader": "^6.2.0",
+    "webpack-dev-server": "^3.11.2",
+    "babel-loader": "^8.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:dev": "webpack serve --lazy"
   },
   "eslintConfig": {
     "extends": [
