@@ -1,5 +1,5 @@
 import React from 'react';
-import { StarshipsTypes } from '../../actions/types/starshipsTypes';
+import { StarshipsTypes } from '../../types/starshipsTypes';
 import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
 import ListVehicles from '../../components/ListVehicles/ListVehicles';
 

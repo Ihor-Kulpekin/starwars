@@ -1,5 +1,5 @@
 import { PeopleTypes } from './peopleTypes';
-import { BasicType } from './basicType';
+import { BasicStateDetails, BasicType } from './basicType';
 
 export interface FilmsTypes {
   title: string,
@@ -16,4 +16,8 @@ export interface FilmsTypes {
 
 export interface FilmsStateType extends BasicType{
   films: FilmsTypes[]
+}
+
+export interface FilmDetailsStateType extends BasicStateDetails{
+  film: FilmsTypes | null
 }

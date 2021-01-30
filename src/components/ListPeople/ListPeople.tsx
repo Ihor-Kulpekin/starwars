@@ -1,5 +1,5 @@
 import React from 'react';
-import { PeopleTypes } from '../../actions/types/peopleTypes';
+import { PeopleTypes } from '../../types/peopleTypes';
 import PeopleItem from '../../molecules/PeopleItem';
 
 interface ListPeopleProps {

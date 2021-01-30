@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyledItem } from '../styled-components/styled-components'
-import { PlanetsTypes } from '../actions/types/planetsTypes';
+import { PlanetsTypes } from '../types/planetsTypes';
 import planet_img from './planet.jpg'
 
 interface PlanetItemProps {

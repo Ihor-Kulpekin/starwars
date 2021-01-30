@@ -1,5 +1,5 @@
 import { ActionTypes } from '../constantns/constants';
-import { PeopleStateType } from '../actions/types/peopleTypes';
+import { PeopleStateType } from '../types/peopleTypes';
 
 const initialState: PeopleStateType = {
   people: [],

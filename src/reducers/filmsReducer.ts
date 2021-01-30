@@ -1,5 +1,5 @@
 import { ActionTypes } from '../constantns/constants';
-import { FilmsStateType } from '../actions/types/filmsTypes';
+import { FilmsStateType } from '../types/filmsTypes';
 
 const initialState: FilmsStateType = {
   films: [],

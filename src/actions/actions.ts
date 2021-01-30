@@ -1,7 +1,7 @@
 import { ActionTypes } from '../constantns/constants';
-import { FilmsTypes } from './types/filmsTypes';
-import { PlanetsTypes } from './types/planetsTypes';
-import { VehiclesTypes } from './types/vehiclesTypes';
+import { FilmsTypes } from '../types/filmsTypes';
+import { PlanetsTypes } from '../types/planetsTypes';
+import { VehiclesTypes } from '../types/vehiclesTypes';
 
 export const getFilms = (search: string) => ({
   type: ActionTypes.GET_FILMS,
@@ -29,7 +29,29 @@ export const getFilmsSuccess = ({
 };
 
 export const getFilmsFailure = () => ({
-  type: typeof ActionTypes.GET_FILMS_FAILURE
+  type: ActionTypes.GET_FILMS_FAILURE
+});
+
+export const getDetailsFilm = (
+  url: string,
+  id: string,
+  actionSuccess: Function,
+  actionFailure: Function
+) => ({
+  type: ActionTypes.GET_DETAILS_FILM,
+  url,
+  id,
+  actionSuccess,
+  actionFailure
+});
+
+export const getDetailsFilmSuccess = (film: FilmsTypes) => ({
+  type: ActionTypes.GET_DETAILS_FILM_SUCCESS,
+  film
+});
+
+export const getDetailsFilmFailure = () => ({
+  type: ActionTypes.GET_DETAILS_FILM_FAILURE
 });
 
 export const getPeople = (search: string) => ({
@@ -138,4 +160,4 @@ export const getVehiclesSuccess = ({
 
 export const getVehiclesFailure = () => ({
   type: ActionTypes.GET_VEHICLES_FAILURE
-})
+});

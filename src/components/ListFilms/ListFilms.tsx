@@ -1,5 +1,5 @@
-import React from 'react'
-import { FilmsTypes } from '../../actions/types/filmsTypes';
+import React from 'react';
+import { FilmsTypes } from '../../types/filmsTypes';
 import FilmItem from '../../molecules/FilmItem';
 
 interface ListFilmsProps {
@@ -8,12 +8,12 @@ interface ListFilmsProps {
   previous: string
 }
 
-const ListFilms: React.FC<ListFilmsProps> = ({films, next, previous}) => (
+const ListFilms: React.FC<ListFilmsProps> = ({ films, next, previous }) => (
   <>
     {
-      films.length!==0?films?.map((film)=> <FilmItem key={film.title} film={film}/>): null
+      films.length !== 0 ? films?.map((film) => <FilmItem key={film.title} film={film}/>) : null
     }
   </>
-)
+);
 
-export default ListFilms
+export default ListFilms;

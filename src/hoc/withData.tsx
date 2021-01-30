@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import styled from 'styled-components';
 
-const WrapperList = styled.ul`
+export const WrapperList = styled.ul`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

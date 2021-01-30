@@ -1,6 +1,6 @@
 import React from 'react';
 import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
-import { PlanetsTypes } from '../../actions/types/planetsTypes';
+import { PlanetsTypes } from '../../types/planetsTypes';
 import ListPlanets from '../../components/ListPlanets/ListPlanets';
 
 interface PlanetsPageProps {

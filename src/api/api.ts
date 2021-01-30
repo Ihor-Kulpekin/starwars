@@ -12,6 +12,10 @@ export const getFilms = async (search?: string) => {
   return await getData(url, search);
 };
 
+export const getDetails = async (url: string, id: string) => {
+  return await getData(`${url}${id}`)
+}
+
 export const getPeople = async (search?: string) => {
   const url = 'https://swapi.dev/api/people/';
   return await getData(url, search);
@@ -34,8 +38,4 @@ export const getVehicles = async (search?: string) => {
 
 export const changePage = async (value: string) => {
   return await getData(value);
-};
-
-export const getDetailsFilm = async (starshipId: number) => {
-  return await getData('https://swapi.dev/api/films/' + starshipId);
 };

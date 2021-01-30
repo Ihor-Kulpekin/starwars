@@ -1,5 +1,5 @@
 import { ActionTypes } from '../constantns/constants';
-import { VehiclesStateType } from '../actions/types/vehiclesTypes';
+import { VehiclesStateType } from '../types/vehiclesTypes';
 
 const initialState: VehiclesStateType = {
   vehicles: [],

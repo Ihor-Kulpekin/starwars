@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledItem } from '../styled-components/styled-components';
 import vehicle_img from './vehicle.jpeg'
-import { VehiclesTypes } from '../actions/types/vehiclesTypes';
+import { VehiclesTypes } from '../types/vehiclesTypes';
 
 interface VehiclesItemProps {
   vehicle: VehiclesTypes;

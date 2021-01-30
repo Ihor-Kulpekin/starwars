@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledItem } from '../styled-components/styled-components';
 import starship_img from './starship.jpg'
-import { StarshipsTypes } from '../actions/types/starshipsTypes';
+import { StarshipsTypes } from '../types/starshipsTypes';
 
 interface StarshipItemProps {
   starship: StarshipsTypes;

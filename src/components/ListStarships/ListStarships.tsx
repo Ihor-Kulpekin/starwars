@@ -1,5 +1,5 @@
 import React from 'react';
-import { StarshipsTypes } from '../../actions/types/starshipsTypes';
+import { StarshipsTypes } from '../../types/starshipsTypes';
 import StarshipItem from '../../molecules/StarshipItem';
 
 interface ListFilmsProps {

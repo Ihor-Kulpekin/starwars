@@ -6,6 +6,10 @@ export interface BasicType {
   previous: string
 }
 
+export interface BasicStateDetails {
+  loading: boolean,
+  error: boolean,
+}
 
 export interface BasicTypeObject {
   created: string,

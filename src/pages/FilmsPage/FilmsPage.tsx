@@ -1,7 +1,7 @@
 import React from 'react';
 import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
 import ListFilms from '../../components/ListFilms/ListFilms';
-import { FilmsTypes } from '../../actions/types/filmsTypes';
+import { FilmsTypes } from '../../types/filmsTypes';
 
 export interface FilmsPageProps {
   data: {

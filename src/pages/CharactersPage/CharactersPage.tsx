@@ -1,5 +1,5 @@
 import React  from 'react';
-import { PeopleTypes } from '../../actions/types/peopleTypes';
+import { PeopleTypes } from '../../types/peopleTypes';
 import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
 import ListPeople from '../../components/ListPeople/ListPeople';
 
