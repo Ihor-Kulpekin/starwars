@@ -1,6 +1,6 @@
 import { PeopleTypes } from './peopleTypes';
 import { FilmsTypes } from './filmsTypes';
-import { BasicType, BasicTypeObject } from './basicType';
+import { BasicStateDetails, BasicType, BasicTypeObject } from './basicType';
 
 export interface PlanetsTypes extends BasicTypeObject{
   name: string,
@@ -18,4 +18,8 @@ export interface PlanetsTypes extends BasicTypeObject{
 
 export interface PlanetsStateType extends BasicType{
   planets: PlanetsTypes[]
+}
+
+export interface PlanetDetailsStateType extends BasicStateDetails{
+  planet: PlanetsTypes | null
 }

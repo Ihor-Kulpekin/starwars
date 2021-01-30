@@ -1,6 +1,6 @@
 import { PeopleTypes } from './peopleTypes';
 import { FilmsTypes } from './filmsTypes';
-import { BasicType, BasicTypeObject } from './basicType';
+import { BasicStateDetails, BasicType, BasicTypeObject } from './basicType';
 
 export interface VehiclesTypes extends BasicTypeObject{
   name: string;
@@ -20,4 +20,8 @@ export interface VehiclesTypes extends BasicTypeObject{
 
 export interface VehiclesStateType extends BasicType{
   vehicles: VehiclesTypes[]
+}
+
+export interface VehicleDetailsStateType extends BasicStateDetails{
+  vehicle: VehiclesTypes | null
 }
