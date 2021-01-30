@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { Wrapper } from '../../styled-components/styled-components';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import { LoginTypes } from '../../types/LoginTypes';
 import useMedia from '../../utils/useMedia';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-const WrapperLogin = styled(Wrapper)`
+const WrapperLogin = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

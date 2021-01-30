@@ -15,7 +15,6 @@ export default function filmDetails(state = initialState, action: any) {
         loading: true
       }
     case ActionTypes.GET_DETAILS_FILM_SUCCESS:
-      debugger
       return {
         ...state,
         loading: false,
