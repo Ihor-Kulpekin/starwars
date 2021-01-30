@@ -5,6 +5,10 @@ import starships from './starshipsReducer';
 import planets from './planetsReducer';
 import vehicles from './vehiclesReducer';
 import filmDetails from './detailsFilmReducer';
+import vehicleDetails from './vehicleDetailsReducer';
+import characterDetails from './detailsCharacterReducer';
+import planetDetails from './detailsPlanetReducer';
+import starshipDetails from './detailsStarshipReducer';
 
 export default combineReducers({
   films,
@@ -12,5 +16,9 @@ export default combineReducers({
   starships,
   planets,
   vehicles,
-  filmDetails
+  filmDetails,
+  vehicleDetails,
+  characterDetails,
+  planetDetails,
+  starshipDetails
 })
