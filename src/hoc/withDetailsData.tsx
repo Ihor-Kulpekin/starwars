@@ -37,7 +37,7 @@ const withDetailsData = (
       dispatch(action(url, id, actionSuccess, actionFailure));
     };
 
-    useEffect(fetchData, []);
+    useEffect(fetchData, [id]);
 
     return (
       <WrapperDetails>

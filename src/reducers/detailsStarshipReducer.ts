@@ -19,7 +19,7 @@ export default function starshipDetails(state = initialState, action: any) {
         ...state,
         loading: false,
         error: false,
-        starship: action.character
+        starship: action.starship
       }
     case ActionTypes.GET_STARSHIP_DETAILS_FAILURE:
       return {

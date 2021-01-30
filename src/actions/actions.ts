@@ -195,7 +195,7 @@ export const getPlanetDetails = (
 });
 
 export const getPLanetDetailsSuccess = (planet: PlanetsTypes) => ({
-  type: ActionTypes.GET_PLANETS_SUCCESS,
+  type: ActionTypes.GET_PLANET_DETAILS_SUCCESS,
   planet
 });
 

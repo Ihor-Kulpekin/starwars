@@ -19,7 +19,7 @@ export default function planetDetails(state = initialState, action: any) {
         ...state,
         loading: false,
         error: false,
-        planet: action.character
+        planet: action.planet
       }
     case ActionTypes.GET_PLANET_DETAILS_FAILURE:
       return {

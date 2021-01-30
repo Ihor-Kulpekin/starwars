@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FilmsTypes } from '../types/filmsTypes';
+import { PeopleTypes } from '../types/peopleTypes';
+import { StarshipsTypes } from '../types/starshipsTypes';
+import { PlanetsTypes } from '../types/planetsTypes';
+import { VehiclesTypes } from '../types/vehiclesTypes';
 
 interface DetailsUniversalProps {
-  item: FilmsTypes,
+  item: FilmsTypes | PeopleTypes | StarshipsTypes | PlanetsTypes | VehiclesTypes,
   columns: any
 }
 

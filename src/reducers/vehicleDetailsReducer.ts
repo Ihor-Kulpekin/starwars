@@ -19,7 +19,7 @@ export default function vehicleDetails(state = initialState, action: any) {
         ...state,
         loading: false,
         error: false,
-        vehicle: action.character
+        vehicle: action.vehicle
       }
     case ActionTypes.GET_VEHICLE_DETAILS_FAILURE:
       return {
