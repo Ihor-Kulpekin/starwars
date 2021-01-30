@@ -251,3 +251,19 @@ export const getVehicleDetailsSuccess = (vehicle: VehiclesTypes) => ({
 export const getVehicleDetailsFailure = () => ({
   type: ActionTypes.GET_VEHICLE_DETAILS_FAILURE
 })
+
+export const getDataForDetailsItem = (strings: string[], actionSuccess: Function, actionFailure: Function) => ({
+  type: ActionTypes.GET_DATA_FOR_DETAILS_ITEM,
+  strings,
+  actionSuccess,
+  actionFailure
+})
+
+export const getDataForDetailsItemSuccess = (items: any) => ({
+  type: ActionTypes.GET_DATA_FOR_DETAILS_ITEM_SUCCESS,
+  items
+})
+
+export const getDataForDetailsItemFailure = () => ({
+  type: ActionTypes.GET_DATA_FOR_DETAILS_ITEM_FAILURE
+})

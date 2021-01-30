@@ -1,4 +1,4 @@
-import { all, debounce, takeLatest } from 'redux-saga/effects';
+import { all, debounce, takeLatest, takeEvery } from 'redux-saga/effects';
 import filmsSaga from './filmsSaga';
 import { ActionTypes } from '../constantns/constants';
 import peopleSaga from './peopleSaga';
@@ -6,6 +6,7 @@ import starshipsSaga from './starshipsSaga';
 import planetsSaga from './planetsSaga';
 import vehiclesSaga from './vehiclesSaga';
 import detailsSaga from './detailsSaga';
+import additionalDataSaga from './additionalDataSaga';
 
 export default function* root() {
   yield all([
@@ -29,6 +30,8 @@ export default function* root() {
         ActionTypes.GET_STARSHIP_DETAILS
       ],
       detailsSaga
-    )
+    ),
+    // @ts-ignore
+    takeEvery(ActionTypes.GET_DATA_FOR_DETAILS_ITEM, additionalDataSaga)
   ]);
 }

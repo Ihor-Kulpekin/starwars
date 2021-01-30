@@ -2,66 +2,77 @@ import React from 'react';
 import { FilmsTypes } from '../../types/filmsTypes';
 import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
 import DetailsUniversal from '../../organisms/DetailsUniversal';
+import ColumnItem from '../../molecules/ColumnItem';
+import { PeopleTypes } from '../../types/peopleTypes';
 
 interface FilmDetailsPageProps {
   data: {
-    film: FilmsTypes,
-    loading: boolean
-  }
+    film: FilmsTypes;
+    loading: boolean;
+  };
 }
 
 const columns = [
   {
-    render: ({ item }: {item: FilmsTypes}) => {
-      return (
-        <div>
-          Title: {item.title}
-        </div>
-      );
-    }
+    dataIndex: 0,
+    render: ({ item }: { item: FilmsTypes }) => <ColumnItem title="Title" value={item.title} />
   },
   {
-    render: ({ item }: {item: FilmsTypes}) => (
-      <div>
-        Episode: {item.episode_id}
-      </div>
+    dataIndex: 1,
+    render: ({ item }: { item: FilmsTypes }) => (
+      <ColumnItem title="Episode" value={item.episode_id} />
     )
   },
   {
-    render: ({ item }: {item: FilmsTypes}) => (
-      <div>
-        Director: {item.director}
-      </div>
+    dataIndex: 2,
+    render: ({ item }: { item: FilmsTypes }) => (
+      <ColumnItem title="Director" value={item.director} />
     )
   },
   {
-    render: ({ item }: {item: FilmsTypes}) => (
-      <div>
-        Producer: {item.producer}
-      </div>
+    dataIndex: 3,
+    render: ({ item }: { item: FilmsTypes }) => (
+      <ColumnItem title="Producer" value={item.producer} />
     )
   },
   {
-    render: ({ item }: {item: FilmsTypes}) => (
-      <div>
-        Characters: {item.characters.length}
-      </div>
+    dataIndex: 4,
+    isCollapse: true,
+    render: ({
+      item,
+      collapse,
+      collapsed,
+               characters
+    }: {
+      item: FilmsTypes;
+      collapse: boolean;
+      collapsed?(): void;
+      characters: PeopleTypes[]
+    }) => (
+      <ColumnItem
+        title="Characters"
+        value={item.characters.length !== 0 ? item.characters : 0}
+        collapse={collapse}
+        collapsed={collapsed}
+        characters={characters}
+      />
     )
   },
   {
-    render: ({ item }: {item: FilmsTypes}) => (
-      <div>
-        Description: {item.opening_crawl}
-      </div>
+    dataIndex: 5,
+    render: ({ item }: { item: FilmsTypes }) => (
+      <ColumnItem title="Description" value={item.opening_crawl} />
     )
   }
 ];
 
 const FilmDetailsPage: React.FC<FilmDetailsPageProps> = ({ data }) => (
   <>
-    {
-      data.film===null && data.loading ? <CircleProgress/> : <DetailsUniversal item={data.film} columns={columns}/>
-    }
+    {data.film === null && data.loading ? (
+      <CircleProgress />
+    ) : (
+      <DetailsUniversal item={data.film}  columns={columns} />
+    )}
   </>
 );
 

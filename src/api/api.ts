@@ -36,6 +36,6 @@ export const getVehicles = async (search?: string) => {
   return await getData(url, search);
 };
 
-export const changePage = async (value: string) => {
-  return await getData(value);
+export const getDataForDetailsItem = async (strings: string[]) => {
+  return await Promise.all(strings.map(async (string) => await getData(string)));
 };

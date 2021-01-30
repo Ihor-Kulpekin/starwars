@@ -19,5 +19,6 @@ export interface FilmsStateType extends BasicType{
 }
 
 export interface FilmDetailsStateType extends BasicStateDetails{
-  film: FilmsTypes | null
+  film: FilmsTypes | null,
+  characters: PeopleTypes[]
 }
