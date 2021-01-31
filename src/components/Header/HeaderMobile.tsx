@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import header_img from './mobile_header_img.png'
+import { NavLink } from 'react-router-dom';
 
 interface CssProps {
   open: boolean;
@@ -79,24 +80,24 @@ const HeaderMobile = () => {
       </StyledBurger>
         <Image src={header_img} alt="header_img"/>
       <WrapperMenuMobile open={open}>
-        <a href="#" className="menu-item">
+        <NavLink to={"/films"} className="menu-item">
           films
-        </a>
-        <a href="#" className="menu-item">
-          people
-        </a>
-        <a href="#" className="menu-item">
+        </NavLink>
+        <NavLink to={"/characters"} className="menu-item">
+          characters
+        </NavLink>
+        <NavLink to={"/starships"} className="menu-item">
           starships
-        </a>
-        <a href="#" className="menu-item">
+        </NavLink>
+        <NavLink to={"/planets"} className="menu-item">
           planets
-        </a>
-        <a href="#" className="menu-item">
+        </NavLink>
+        <NavLink to={"/vehicles"} className="menu-item">
           vehicles
-        </a>
-        <a href="#" className="menu-item">
+        </NavLink>
+        <NavLink to={"/login"} className="menu-item">
           log in
-        </a>
+        </NavLink>
       </WrapperMenuMobile>
     </>
   );
