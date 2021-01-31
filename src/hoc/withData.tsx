@@ -21,7 +21,7 @@ const withData = (Component: React.FC<any>, selector: (state: RootState) => void
       dispatch(action(''));
     };
 
-    useEffect(fetchData,[])
+    useEffect(fetchData,[dispatch])
 
     return (
       <WrapperList>

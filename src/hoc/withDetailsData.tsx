@@ -41,12 +41,12 @@ const withDetailsData = (
       dispatch(action(url, id, actionSuccess, actionFailure));
     };
 
-    useEffect(fetchData, [id]);
+    useEffect(fetchData, [id, dispatch]);
 
     return (
       <WrapperDetails mobile={mobile}>
         <div className="img">
-          <img src={filmItem} alt="image"/>
+          <img src={filmItem} alt="image_img"/>
         </div>
         <Component data={data} />
       </WrapperDetails>

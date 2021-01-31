@@ -55,7 +55,7 @@ const ColumnItem: React.FC<ColumnItemProps> = ({
 }) => {
   const characterItems = useMemo(()=> {
     return characters?.map((item) => {
-      return <div>Name: {item.name}</div>
+      return <div key={item.name}>Name: {item.name}</div>
     });
   }, [characters])
 

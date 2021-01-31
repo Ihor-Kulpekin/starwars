@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const ItemPage = ({ srcImg, title }: { srcImg: string; title: string }) => (
   <Wrapper>
     <Heading title={title} />
-    <img src={srcImg} alt="photo" />
+    <img src={srcImg} alt="photo_img" />
   </Wrapper>
 );
 
