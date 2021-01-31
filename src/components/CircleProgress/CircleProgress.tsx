@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const CircleProgress = styled.div`
   border-radius: 50%;
   font-size: 11px;
-  text-indent: -99999em;
   margin: 5em auto;
   background-color: black;
   position: relative;
@@ -49,11 +48,9 @@ export const CircleProgress = styled.div`
 
   @keyframes load {
     0% {
-      -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
     100% {
-      -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
   }

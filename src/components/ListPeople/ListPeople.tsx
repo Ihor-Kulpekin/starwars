@@ -4,8 +4,8 @@ import PeopleItem from 'molecules/PeopleItem';
 
 interface ListPeopleProps {
   people: PeopleTypes[];
-  next: string;
-  previous: string;
+  next?: string;
+  previous?: string;
 }
 
 const ListPeople: React.FC<ListPeopleProps> = ({ people, previous, next }) => (

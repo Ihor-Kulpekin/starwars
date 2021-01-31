@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { PeopleTypes } from 'types/peopleTypes';
 
 interface ColumnItemProps {
   title: string;
   collapse?: boolean;
-
   collapsed?(): void;
   loading?: boolean;
   value: any;
@@ -31,7 +30,7 @@ const WrapperColumnItem = styled.div<{ collapse?: boolean; length?: number }>`
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 5px solid gray;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     ${({ collapse }) => `
     transform: ${collapse ? 'rotate(180deg)' : 'rotate(0deg)'} 
   `}
@@ -41,6 +40,8 @@ const WrapperColumnItem = styled.div<{ collapse?: boolean; length?: number }>`
 const StyledList = styled.div<{ length: number }>`
   display: ${({ length }) => (length === 0 ? 'none' : 'flex')};
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
 `;
 
@@ -51,19 +52,26 @@ const ColumnItem: React.FC<ColumnItemProps> = ({
   collapsed,
   characters,
   loading
-}) => (
-  <>
-    <WrapperColumnItem collapse={collapse} length={value.length} onClick={collapsed}>
-      <span className="title">{title}</span>
-      {Array.isArray(value) ? <div className="arrow-up" /> : value}
-    </WrapperColumnItem>
-    {characters ? (
-      <StyledList length={value.length}>
-        {loading ? '3' : null}
-        {collapse && characters.length !== 0 ? characters[0].name : null}
-      </StyledList>
-    ) : null}
-  </>
-);
+}) => {
+  const characterItems = useMemo(()=> {
+    return characters?.map((item) => {
+      return <div>Name: {item.name}</div>
+    });
+  }, [characters])
+
+  return (
+    <>
+      <WrapperColumnItem collapse={collapse} length={value.length} onClick={collapsed}>
+        <span className="title">{title}</span>
+        {Array.isArray(value) ? <div className="arrow-up" /> : value}
+      </WrapperColumnItem>
+      {characters && !loading? (
+        <StyledList length={value.length}>
+          {collapse && characters.length !== 0 ? characterItems : null}
+        </StyledList>
+      ) : null}
+    </>
+  )
+};
 
 export default ColumnItem;
