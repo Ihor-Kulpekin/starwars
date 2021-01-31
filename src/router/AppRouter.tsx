@@ -22,7 +22,17 @@ import {
   getPLanetDetailsFailure,
   getVehicleDetails,
   getVehicleDetailsSuccess,
-  getVehicleDetailsFailure
+  getVehicleDetailsFailure,
+  getFilmsSuccess,
+  getFilmsFailure,
+  getPeopleSuccess,
+  getPeopleFailure,
+  getStarshipsSuccess,
+  getStarshipsFailure,
+  getPlanetsSuccess,
+  getPlanetsFailure,
+  getVehiclesSuccess,
+  getVehiclesFailure
 } from 'actions/actions';
 import withDetailsData from 'hoc/withDetailsData';
 import {
@@ -45,18 +55,52 @@ const StarshipsPage = lazy(() => import('pages/StarshipsPage/StarshipsPage'));
 const PlanetsPage = lazy(() => import('pages/PlanetsPage/PlanetsPage'));
 const VehiclesPage = lazy(() => import('pages/VehiclesPage/VehiclesPage'));
 const FilmDetailsPage = lazy(() => import('pages/FilmDetailsPage/FilmDetailsPage'));
-const CharacterDetailsPage = lazy(
-  () => import('pages/CharacterDetailsPage/CharacterDetailsPage')
-);
+const CharacterDetailsPage = lazy(() => import('pages/CharacterDetailsPage/CharacterDetailsPage'));
 const StarshipDetailsPage = lazy(() => import('pages/StarshipDetailsPage/StarshipDetailsPage'));
 const PlanetDetailsPage = lazy(() => import('pages/PlanetDetailsPage/PlanetDetailsPage'));
 const VehicleDetailsPage = lazy(() => import('pages/VehicleDetailsPage/VehicleDetailsPage'));
 
-const FilmsPageWithData = withData(FilmsPage, getFilmsSelector, getFilms);
-const CharactersPageWithData = withData(CharactersPage, getPeopleSelector, getPeople);
-const StarshipsPageWithData = withData(StarshipsPage, getStarshipsSelector, getStarships);
-const PlanetsPageWithData = withData(PlanetsPage, getPlanetsSelector, getPlanets);
-const VehiclesPageWithData = withData(VehiclesPage, getPlanetsVehicle, getVihicles);
+const FilmsPageWithData = withData(
+  FilmsPage,
+  getFilmsSelector,
+  getFilms,
+  getFilmsSuccess,
+  getFilmsFailure,
+  'https://swapi.dev/api/films/'
+);
+const CharactersPageWithData = withData(
+  CharactersPage,
+  getPeopleSelector,
+  getPeople,
+  getPeopleSuccess,
+  getPeopleFailure,
+  'https://swapi.dev/api/people/'
+);
+const StarshipsPageWithData = withData(
+  StarshipsPage,
+  getStarshipsSelector,
+  getStarships,
+  getStarshipsSuccess,
+  getStarshipsFailure,
+  'https://swapi.dev/api/starships/'
+);
+const PlanetsPageWithData = withData(
+  PlanetsPage,
+  getPlanetsSelector,
+  getPlanets,
+  getPlanetsSuccess,
+  getPlanetsFailure,
+  'https://swapi.dev/api/planets/'
+);
+const VehiclesPageWithData = withData(
+  VehiclesPage,
+  getPlanetsVehicle,
+  getVihicles,
+  getVehiclesSuccess,
+  getVehiclesFailure,
+  'https://swapi.dev/api/vehicles/'
+);
+
 const FilmDetailsPageWithDetailsData = withDetailsData(
   FilmDetailsPage,
   getFilmDetailsSelector,

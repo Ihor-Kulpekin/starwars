@@ -10,22 +10,29 @@ export const WrapperList = styled.ul`
   min-height: calc(70vh - 90px);
   max-width: 1280px;
   margin: 0 auto;
-`
+`;
 
-const withData = (Component: React.FC<any>, selector: (state: RootState) => void, action: Function) => {
+const withData = (
+  Component: React.FC<any>,
+  selector: (state: RootState) => void,
+  action: Function,
+  actionSuccess: Function,
+  actionFailure: Function,
+  url: string
+) => {
   return () => {
     const data = useSelector<RootState>(selector);
     const dispatch = useDispatch();
 
     const fetchData = () => {
-      dispatch(action(''));
+      dispatch(action('',actionSuccess, actionFailure, url));
     };
 
-    useEffect(fetchData,[dispatch])
+    useEffect(fetchData, [dispatch]);
 
     return (
       <WrapperList>
-        <Component data={data}/>
+        <Component data={data} />
       </WrapperList>
     );
   };

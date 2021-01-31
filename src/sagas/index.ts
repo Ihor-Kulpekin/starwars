@@ -1,25 +1,19 @@
-import { all, debounce, takeLatest, takeEvery } from 'redux-saga/effects';
-import filmsSaga from './filmsSaga';
+import { all, debounce, takeEvery, takeLatest } from 'redux-saga/effects';
 import { ActionTypes } from '../constantns/constants';
-import peopleSaga from './peopleSaga';
-import starshipsSaga from './starshipsSaga';
-import planetsSaga from './planetsSaga';
-import vehiclesSaga from './vehiclesSaga';
 import detailsSaga from './detailsSaga';
 import additionalDataSaga from './additionalDataSaga';
+import listsSaga from './listsSaga';
 
 export default function* root() {
   yield all([
     // @ts-ignore
-    debounce(500, ActionTypes.GET_FILMS, filmsSaga),
-    // @ts-ignore
-    debounce(500, ActionTypes.GET_PEOPLE, peopleSaga),
-    // @ts-ignore
-    debounce(500, ActionTypes.GET_STARSHIPS, starshipsSaga),
-    // @ts-ignore
-    debounce(500, ActionTypes.GET_PLANETS, planetsSaga),
-    // @ts-ignore
-    debounce(500, ActionTypes.GET_VEHICLES, vehiclesSaga),
+    debounce(500, [
+      ActionTypes.GET_FILMS,
+      ActionTypes.GET_PLANETS,
+      ActionTypes.GET_STARSHIPS,
+      ActionTypes.GET_VEHICLES,
+      ActionTypes.GET_PEOPLE
+    ], listsSaga),
     takeLatest(
       // @ts-ignore
       [

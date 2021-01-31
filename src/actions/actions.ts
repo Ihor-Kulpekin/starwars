@@ -5,8 +5,16 @@ import { VehiclesTypes } from '../types/vehiclesTypes';
 import { PeopleTypes } from '../types/peopleTypes';
 import { StarshipsTypes } from '../types/starshipsTypes';
 
-export const getFilms = (search: string) => ({
+export const getFilms = (
+  search: string,
+  actionSuccess: Function,
+  actionFailure: Function,
+  url: string
+) => ({
   type: ActionTypes.GET_FILMS,
+  actionSuccess,
+  actionFailure,
+  url,
   search
 });
 
@@ -56,9 +64,17 @@ export const getDetailsFilmFailure = () => ({
   type: ActionTypes.GET_DETAILS_FILM_FAILURE
 });
 
-export const getPeople = (search: string) => ({
+export const getPeople = (
+  search: string,
+  actionSuccess: Function,
+  actionFailure: Function,
+  url: string
+) => ({
   type: ActionTypes.GET_PEOPLE,
-  search
+  search,
+  actionSuccess,
+  actionFailure,
+  url
 });
 
 export const getPeopleSuccess = ({
@@ -105,9 +121,17 @@ export const getCharacterDetailsFailure = () => ({
   type: ActionTypes.GET_CHARACTER_DETAILS_FAILURE
 });
 
-export const getStarships = (search: string) => ({
+export const getStarships = (
+  search: string,
+  actionSuccess: Function,
+  actionFailure: Function,
+  url: string
+) => ({
   type: ActionTypes.GET_STARSHIPS,
-  search
+  search,
+  actionSuccess,
+  actionFailure,
+  url
 });
 
 export const getStarshipsSuccess = ({
@@ -154,9 +178,17 @@ export const getStarshipDetailsFailure = () => ({
   type: ActionTypes.GET_STARSHIP_DETAILS_FAILURE
 });
 
-export const getPlanets = (search?: string) => ({
+export const getPlanets = (
+  search: string,
+  actionSuccess: Function,
+  actionFailure: Function,
+  url: string
+) => ({
   type: ActionTypes.GET_PLANETS,
-  search
+  search,
+  actionSuccess,
+  actionFailure,
+  url
 });
 
 export const getPlanetsSuccess = ({
@@ -203,9 +235,17 @@ export const getPLanetDetailsFailure = () => ({
   type: ActionTypes.GET_PLANET_DETAILS_FAILURE
 });
 
-export const getVihicles = (search?: string) => ({
+export const getVihicles = (
+  search: string,
+  actionSuccess: Function,
+  actionFailure: Function,
+  url: string
+) => ({
   type: ActionTypes.GET_VEHICLES,
-  search
+  search,
+  actionSuccess,
+  actionFailure,
+  url
 });
 
 export const getVehiclesSuccess = ({
@@ -246,24 +286,28 @@ export const getVehicleDetails = (
 export const getVehicleDetailsSuccess = (vehicle: VehiclesTypes) => ({
   type: ActionTypes.GET_VEHICLE_DETAILS_SUCCESS,
   vehicle
-})
+});
 
 export const getVehicleDetailsFailure = () => ({
   type: ActionTypes.GET_VEHICLE_DETAILS_FAILURE
-})
+});
 
-export const getDataForDetailsItem = (strings: string[], actionSuccess: Function, actionFailure: Function) => ({
+export const getDataForDetailsItem = (
+  strings: string[],
+  actionSuccess: Function,
+  actionFailure: Function
+) => ({
   type: ActionTypes.GET_DATA_FOR_DETAILS_ITEM,
   strings,
   actionSuccess,
   actionFailure
-})
+});
 
 export const getDataForDetailsItemSuccess = (items: any) => ({
   type: ActionTypes.GET_DATA_FOR_DETAILS_ITEM_SUCCESS,
   items
-})
+});
 
 export const getDataForDetailsItemFailure = () => ({
   type: ActionTypes.GET_DATA_FOR_DETAILS_ITEM_FAILURE
-})
+});

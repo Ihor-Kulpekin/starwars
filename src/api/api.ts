@@ -16,6 +16,10 @@ export const getDetails = async (url: string, id: string) => {
   return await getData(`${url}${id}/`)
 }
 
+export const getListData = async (url:string, search?:string) =>{
+  return await getData(`${url}`, search)
+}
+
 export const getPeople = async (search?: string) => {
   const url = 'https://swapi.dev/api/people/';
   return await getData(url, search);
