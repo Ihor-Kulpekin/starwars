@@ -1,7 +1,7 @@
 import React from 'react';
-import { PeopleTypes } from '../../types/peopleTypes';
-import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
-import DetailsUniversal from '../../organisms/DetailsUniversal';
+import { PeopleTypes } from 'types/peopleTypes';
+import { CircleProgress } from 'components/CircleProgress/CircleProgress';
+import DetailsUniversal from 'organisms/DetailsUniversal';
 
 interface CharacterDetailsPageProps {
   data: {

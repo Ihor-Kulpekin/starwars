@@ -1,6 +1,6 @@
 import React from 'react';
-import { StarshipsTypes } from '../../types/starshipsTypes';
-import StarshipItem from '../../molecules/StarshipItem';
+import { StarshipsTypes } from 'types/starshipsTypes';
+import StarshipItem from 'molecules/StarshipItem';
 
 interface ListFilmsProps {
   starships: StarshipsTypes[];

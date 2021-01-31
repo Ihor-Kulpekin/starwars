@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PeopleTypes } from '../types/peopleTypes';
+import { PeopleTypes } from 'types/peopleTypes';
 
 interface ColumnItemProps {
   title: string;

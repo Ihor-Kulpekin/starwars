@@ -1,6 +1,6 @@
 import React from 'react';
-import { FilmsTypes } from '../../types/filmsTypes';
-import FilmItem from '../../molecules/FilmItem';
+import { FilmsTypes } from 'types/filmsTypes';
+import FilmItem from 'molecules/FilmItem';
 
 interface ListFilmsProps {
   films: FilmsTypes[],

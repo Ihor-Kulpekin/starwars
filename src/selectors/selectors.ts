@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { RootState } from '../store/store';
+import { RootState } from 'store/store';
 
 export const getFilmsSelector = createSelector(
   (state: RootState) => state.films,

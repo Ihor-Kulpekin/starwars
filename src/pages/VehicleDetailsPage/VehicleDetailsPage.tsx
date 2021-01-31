@@ -1,7 +1,7 @@
 import React from 'react';
-import { VehiclesTypes } from '../../types/vehiclesTypes';
-import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
-import DetailsUniversal from '../../organisms/DetailsUniversal';
+import { VehiclesTypes } from 'types/vehiclesTypes';
+import { CircleProgress } from 'components/CircleProgress/CircleProgress';
+import DetailsUniversal from 'organisms/DetailsUniversal';
 
 interface VehicleDetailsPageProps {
   data: {

@@ -1,5 +1,5 @@
-import { ActionTypes } from '../constantns/constants';
-import { CharacterDetailsStateType } from '../types/peopleTypes';
+import { ActionTypes } from 'constantns/constants';
+import { CharacterDetailsStateType } from 'types/peopleTypes';
 
 const initialState:CharacterDetailsStateType = {
   character: null,

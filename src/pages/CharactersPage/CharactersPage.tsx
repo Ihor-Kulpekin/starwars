@@ -1,7 +1,7 @@
 import React  from 'react';
-import { PeopleTypes } from '../../types/peopleTypes';
-import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
-import ListPeople from '../../components/ListPeople/ListPeople';
+import { PeopleTypes } from 'types/peopleTypes';
+import { CircleProgress } from 'components/CircleProgress/CircleProgress';
+import ListPeople from 'components/ListPeople/ListPeople';
 
 interface PeoplePageProps {
   data: {

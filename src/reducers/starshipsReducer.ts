@@ -1,5 +1,5 @@
-import { ActionTypes } from '../constantns/constants';
-import { StarshipsStateType } from '../types/starshipsTypes';
+import { ActionTypes } from 'constantns/constants';
+import { StarshipsStateType } from 'types/starshipsTypes';
 
 const initialState: StarshipsStateType = {
   starships: [],

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../../logo.png';
+import logo from '../Header/logo.png';
 import background_about from '../background_about.jpg';
 
 const StyledAbout = styled.div`

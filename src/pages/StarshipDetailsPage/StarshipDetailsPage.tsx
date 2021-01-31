@@ -1,7 +1,7 @@
 import React from 'react';
-import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
-import DetailsUniversal from '../../organisms/DetailsUniversal';
-import { StarshipsTypes } from '../../types/starshipsTypes';
+import { CircleProgress } from 'components/CircleProgress/CircleProgress';
+import DetailsUniversal from 'organisms/DetailsUniversal';
+import { StarshipsTypes } from 'types/starshipsTypes';
 
 interface StarshipDetailsPageProps {
   data: {

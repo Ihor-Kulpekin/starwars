@@ -5,9 +5,8 @@ import { Provider } from 'react-redux';
 import { GlobalStyle } from './utils/globalStyles';
 import { store } from './store/store';
 import AppRouter from './router/AppRouter';
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -15,9 +14,9 @@ function App() {
       <GlobalStyle />
       <Header />
       <Provider store={store}>
-          <AppRouter />
+        <AppRouter />
       </Provider>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }

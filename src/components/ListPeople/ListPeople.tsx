@@ -1,6 +1,6 @@
 import React from 'react';
-import { PeopleTypes } from '../../types/peopleTypes';
-import PeopleItem from '../../molecules/PeopleItem';
+import { PeopleTypes } from 'types/peopleTypes';
+import PeopleItem from 'molecules/PeopleItem';
 
 interface ListPeopleProps {
   people: PeopleTypes[];

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import header_img from './header_login.png';
 import { Formik } from 'formik';
-import Input from '../../molecules/Input';
+import Input from 'molecules/Input';
 
 const WrapperLoginForm = styled.div`
   background-color: #181818;

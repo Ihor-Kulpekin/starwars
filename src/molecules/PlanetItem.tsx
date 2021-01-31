@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyledItem } from '../styled-components/styled-components';
-import { PlanetsTypes } from '../types/planetsTypes';
+import { StyledItem } from 'styled-components/styled-components';
+import { PlanetsTypes } from 'types/planetsTypes';
 import planet_img from './planet.jpg';
 import { NavLink } from 'react-router-dom';
-import { getId } from '../utils/getId';
+import { getId } from 'utils/getId';
 
 interface PlanetItemProps {
   planet: PlanetsTypes;

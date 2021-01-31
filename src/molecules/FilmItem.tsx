@@ -1,9 +1,9 @@
 import React from 'react';
-import { FilmsTypes } from '../types/filmsTypes';
+import { FilmsTypes } from 'types/filmsTypes';
 import filmItem from './film_item.jpg';
-import { StyledItem } from '../styled-components/styled-components';
+import { StyledItem } from 'styled-components/styled-components';
 import { NavLink } from 'react-router-dom';
-import { getId } from '../utils/getId';
+import { getId } from 'utils/getId';
 
 interface FilmItemProps {
   film: FilmsTypes;

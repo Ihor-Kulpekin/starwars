@@ -1,9 +1,9 @@
 import React from 'react';
-import { FilmsTypes } from '../../types/filmsTypes';
-import { CircleProgress } from '../../components/CircleProgress/CircleProgress';
-import DetailsUniversal from '../../organisms/DetailsUniversal';
-import ColumnItem from '../../molecules/ColumnItem';
-import { PeopleTypes } from '../../types/peopleTypes';
+import { FilmsTypes } from 'types/filmsTypes';
+import { CircleProgress } from 'components/CircleProgress/CircleProgress';
+import DetailsUniversal from 'organisms/DetailsUniversal';
+import ColumnItem from 'molecules/ColumnItem';
+import { PeopleTypes } from 'types/peopleTypes';
 
 interface FilmDetailsPageProps {
   data: {

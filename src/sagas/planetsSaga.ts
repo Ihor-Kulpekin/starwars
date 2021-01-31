@@ -1,7 +1,7 @@
 import { put, call } from 'redux-saga/effects';
 
-import { getPlanets as apiGetPlanets } from '../api/api';
-import { getPlanetsSuccess, getPlanetsFailure } from '../actions/actions';
+import { getPlanets as apiGetPlanets } from 'api/api';
+import { getPlanetsSuccess, getPlanetsFailure } from 'actions/actions';
 
 export default function* peopleSaga({ search }: { search?: string }) {
   try {

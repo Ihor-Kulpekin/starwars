@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/store';
+import { RootState } from 'store/store';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import filmItem from '../molecules/film_item.jpg';
-import useMedia from '../utils/useMedia';
+import filmItem from 'molecules/film_item.jpg';
+import useMedia from 'utils/useMedia';
 
 const WrapperDetails = styled.div<any>`
   display: flex;

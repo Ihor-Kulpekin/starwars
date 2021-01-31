@@ -1,5 +1,5 @@
-import { ActionTypes } from '../constantns/constants';
-import { PlanetsStateType } from '../types/planetsTypes';
+import { ActionTypes } from 'constantns/constants';
+import { PlanetsStateType } from 'types/planetsTypes';
 
 const initialState: PlanetsStateType = {
   planets: [],

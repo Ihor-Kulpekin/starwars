@@ -1,5 +1,5 @@
-import { ActionTypes } from '../constantns/constants';
-import { StarshipDetailsStateType } from '../types/starshipsTypes';
+import { ActionTypes } from 'constantns/constants';
+import { StarshipDetailsStateType } from 'types/starshipsTypes';
 
 const initialState:StarshipDetailsStateType = {
   starship: null,

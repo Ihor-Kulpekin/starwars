@@ -1,7 +1,7 @@
 import { put, call } from 'redux-saga/effects';
 
-import { getFilms as apiGetFilms } from '../api/api';
-import { getFilmsFailure, getFilmsSuccess } from '../actions/actions';
+import { getFilms as apiGetFilms } from 'api/api';
+import { getFilmsFailure, getFilmsSuccess } from 'actions/actions';
 
 export default function* filmsSaga({ search }: { search?: string }) {
   try {

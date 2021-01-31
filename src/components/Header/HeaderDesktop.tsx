@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../../logo.png';
-import Navbar from '../Navbar/Navbar';
+import logo from './logo.png';
+import Navbar from 'components/Navbar/Navbar';
 import { NavLink } from "react-router-dom";
 
 const WrapperHeader = styled.div`

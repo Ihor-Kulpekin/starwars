@@ -1,6 +1,6 @@
 import React from 'react';
-import { PlanetsTypes } from '../../types/planetsTypes';
-import PlanetItem from '../../molecules/PlanetItem';
+import { PlanetsTypes } from 'types/planetsTypes';
+import PlanetItem from 'molecules/PlanetItem';
 
 interface ListPlanetsProps {
   planets: PlanetsTypes [],

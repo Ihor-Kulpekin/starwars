@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/store';
+import { RootState } from 'store/store';
 import styled from 'styled-components';
 
 export const WrapperList = styled.ul`

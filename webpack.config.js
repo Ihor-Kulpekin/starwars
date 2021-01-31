@@ -20,19 +20,19 @@ module.exports = {
             loader: 'ts-loader',
             options: {
               transpileOnly: true
-            },
-          },
+            }
+          }
         ],
         exclude: /node_modules/
       },
-      {test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=app/images/[name].[ext]"},
+      { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader?name=app/images/[name].[ext]' }
     ]
   },
   optimization: {
     runtimeChunk: true
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     filename: 'bundle.js',

@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch } from 'react-router-dom';
 import { PublicRoute } from './PublicRoute';
-import withData from '../hoc/withData';
+import withData from 'hoc/withData';
 import {
   getFilms,
   getPeople,
@@ -23,31 +23,34 @@ import {
   getVehicleDetails,
   getVehicleDetailsSuccess,
   getVehicleDetailsFailure
-} from '../actions/actions';
-import withDetailsData from '../hoc/withDetailsData';
+} from 'actions/actions';
+import withDetailsData from 'hoc/withDetailsData';
 import {
   getCharacterDetailsSelector,
   getFilmDetailsSelector,
   getFilmsSelector,
-  getPeopleSelector, getPlanetDetailsSelector,
+  getPeopleSelector,
+  getPlanetDetailsSelector,
   getPlanetsSelector,
-  getPlanetsVehicle, getStarshipDetailsSelector,
-  getStarshipsSelector, getVehicleDetailsSelector
-} from '../selectors/selectors';
+  getPlanetsVehicle,
+  getStarshipDetailsSelector,
+  getStarshipsSelector,
+  getVehicleDetailsSelector
+} from 'selectors/selectors';
 
-const FilmsPage = lazy(() => import('../pages/FilmsPage/FilmsPage'));
-const CharactersPage = lazy(() => import('../pages/CharactersPage/CharactersPage'));
-const Landing = lazy(() => import('../pages/Landing/Landing'));
-const StarshipsPage = lazy(() => import('../pages/StarshipsPage/StarshipsPage'));
-const PlanetsPage = lazy(() => import('../pages/PlanetsPage/PlanetsPage'));
-const VehiclesPage = lazy(() => import('../pages/VehiclesPage/VehiclesPage'));
-const FilmDetailsPage = lazy(() => import('../pages/FilmDetailsPage/FilmDetailsPage'));
+const FilmsPage = lazy(() => import('pages/FilmsPage/FilmsPage'));
+const CharactersPage = lazy(() => import('pages/CharactersPage/CharactersPage'));
+const Landing = lazy(() => import('pages/Landing/Landing'));
+const StarshipsPage = lazy(() => import('pages/StarshipsPage/StarshipsPage'));
+const PlanetsPage = lazy(() => import('pages/PlanetsPage/PlanetsPage'));
+const VehiclesPage = lazy(() => import('pages/VehiclesPage/VehiclesPage'));
+const FilmDetailsPage = lazy(() => import('pages/FilmDetailsPage/FilmDetailsPage'));
 const CharacterDetailsPage = lazy(
-  () => import('../pages/CharacterDetailsPage/CharacterDetailsPage')
+  () => import('pages/CharacterDetailsPage/CharacterDetailsPage')
 );
-const StarshipDetailsPage = lazy(() => import('../pages/StarshipDetailsPage/StarshipDetailsPage'));
-const PlanetDetailsPage = lazy(() => import('../pages/PlanetDetailsPage/PlanetDetailsPage'));
-const VehicleDetailsPage = lazy(()=>import('../pages/VehicleDetailsPage/VehicleDetailsPage'))
+const StarshipDetailsPage = lazy(() => import('pages/StarshipDetailsPage/StarshipDetailsPage'));
+const PlanetDetailsPage = lazy(() => import('pages/PlanetDetailsPage/PlanetDetailsPage'));
+const VehicleDetailsPage = lazy(() => import('pages/VehicleDetailsPage/VehicleDetailsPage'));
 
 const FilmsPageWithData = withData(FilmsPage, getFilmsSelector, getFilms);
 const CharactersPageWithData = withData(CharactersPage, getPeopleSelector, getPeople);
@@ -97,7 +100,7 @@ const VehicleDetailsPageWithDetailsData = withDetailsData(
   getVehicleDetailsSuccess,
   getVehicleDetailsFailure,
   'https://swapi.dev/api/vehicles/'
-)
+);
 
 const AppRouter = () => (
   <Suspense fallback={<div>...Loading</div>}>

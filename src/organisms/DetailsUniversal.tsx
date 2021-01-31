@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FilmsTypes } from '../types/filmsTypes';
-import { PeopleTypes } from '../types/peopleTypes';
-import { StarshipsTypes } from '../types/starshipsTypes';
-import { PlanetsTypes } from '../types/planetsTypes';
-import { VehiclesTypes } from '../types/vehiclesTypes';
+import { FilmsTypes } from 'types/filmsTypes';
+import { PeopleTypes } from 'types/peopleTypes';
+import { StarshipsTypes } from 'types/starshipsTypes';
+import { PlanetsTypes } from 'types/planetsTypes';
+import { VehiclesTypes } from 'types/vehiclesTypes';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/store';
-import { getDataForDetailsItem, getDataForDetailsItemSuccess, getDataForDetailsItemFailure } from '../actions/actions';
+import { getDataForDetailsItem, getDataForDetailsItemSuccess, getDataForDetailsItemFailure } from 'actions/actions';
+import { getFilmDetailsSelector } from 'selectors/selectors';
 
 interface DetailsUniversalProps {
   item: FilmsTypes | PeopleTypes | StarshipsTypes | PlanetsTypes | VehiclesTypes | any,
@@ -25,7 +25,7 @@ const WrapperUniversal = styled.div`
 const DetailsUniversal: React.FC<DetailsUniversalProps> = ({ item, columns }) => {
   const [collapse, setCollapse] = useState(false);
   const dispatch = useDispatch();
-  const {characters, loading} = useSelector((state: RootState) => state.filmDetails)
+  const {characters, loading} = useSelector(getFilmDetailsSelector)
 
   const collapsed = () => {
     if(characters.length===0){

@@ -1,7 +1,7 @@
 import { put, call } from 'redux-saga/effects';
 
-import { getStarships as apiGetStarships } from '../api/api';
-import { getStarshipsFailure, getStarshipsSuccess } from '../actions/actions';
+import { getStarships as apiGetStarships } from 'api/api';
+import { getStarshipsFailure, getStarshipsSuccess } from 'actions/actions';
 
 export default function* peopleSaga({ search }: { search?: string }) {
   try {

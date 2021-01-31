@@ -1,5 +1,5 @@
 import { call, put } from 'redux-saga/effects';
-import { getDataForDetailsItem } from '../api/api';
+import { getDataForDetailsItem } from 'api/api';
 
 export default function* additionalSaga({
   strings,

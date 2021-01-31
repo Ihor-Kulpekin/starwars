@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import LoginForm from '../../components/LoginForm/LoginForm';
-import { LoginTypes } from '../../types/LoginTypes';
-import useMedia from '../../utils/useMedia';
+import LoginForm from 'components/LoginForm/LoginForm';
+import { LoginTypes } from 'types/LoginTypes';
+import useMedia from 'utils/useMedia';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 

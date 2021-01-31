@@ -1,6 +1,6 @@
 import { put, call } from 'redux-saga/effects';
 
-import { getDetails as apiGetDetails } from '../api/api';
+import { getDetails as apiGetDetails } from 'api/api';
 
 export default function* detailsSaga({
   url,

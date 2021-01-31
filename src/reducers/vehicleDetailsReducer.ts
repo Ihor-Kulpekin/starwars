@@ -1,5 +1,5 @@
-import { ActionTypes } from '../constantns/constants';
-import { VehicleDetailsStateType } from '../types/vehiclesTypes';
+import { ActionTypes } from 'constantns/constants';
+import { VehicleDetailsStateType } from 'types/vehiclesTypes';
 
 const initialState:VehicleDetailsStateType = {
   vehicle: null,

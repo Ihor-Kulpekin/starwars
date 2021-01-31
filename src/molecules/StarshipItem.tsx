@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyledItem } from '../styled-components/styled-components';
+import { StyledItem } from 'styled-components/styled-components';
 import starship_img from './starship.jpg'
-import { StarshipsTypes } from '../types/starshipsTypes';
+import { StarshipsTypes } from 'types/starshipsTypes';
 import { NavLink } from 'react-router-dom';
-import { getId } from '../utils/getId';
+import { getId } from 'utils/getId';
 
 interface StarshipItemProps {
   starship: StarshipsTypes;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { VehiclesTypes } from '../../types/vehiclesTypes';
-import VehicleItem from '../../molecules/VehiclesItem';
+import { VehiclesTypes } from 'types/vehiclesTypes';
+import VehicleItem from 'molecules/VehiclesItem';
 
 interface ListVehiclesProps {
   vehicles: VehiclesTypes[],

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Wrapper } from '../../styled-components/styled-components';
-import useMedia from '../../utils/useMedia';
+import { Wrapper } from 'styled-components/styled-components';
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
+import useMedia from 'utils/useMedia';
 
 const WrapperHeader = styled(Wrapper)`
   margin-bottom: 50px;
