@@ -25,6 +25,15 @@ import {
   getVehicleDetailsFailure
 } from '../actions/actions';
 import withDetailsData from '../hoc/withDetailsData';
+import {
+  getCharacterDetailsSelector,
+  getFilmDetailsSelector,
+  getFilmsSelector,
+  getPeopleSelector, getPlanetDetailsSelector,
+  getPlanetsSelector,
+  getPlanetsVehicle, getStarshipDetailsSelector,
+  getStarshipsSelector, getVehicleDetailsSelector
+} from '../selectors/selectors';
 
 const FilmsPage = lazy(() => import('../pages/FilmsPage/FilmsPage'));
 const CharactersPage = lazy(() => import('../pages/CharactersPage/CharactersPage'));
@@ -40,14 +49,14 @@ const StarshipDetailsPage = lazy(() => import('../pages/StarshipDetailsPage/Star
 const PlanetDetailsPage = lazy(() => import('../pages/PlanetDetailsPage/PlanetDetailsPage'));
 const VehicleDetailsPage = lazy(()=>import('../pages/VehicleDetailsPage/VehicleDetailsPage'))
 
-const FilmsPageWithData = withData(FilmsPage, (state) => state.films, getFilms);
-const CharactersPageWithData = withData(CharactersPage, (state) => state.people, getPeople);
-const StarshipsPageWithData = withData(StarshipsPage, (state) => state.starships, getStarships);
-const PlanetsPageWithData = withData(PlanetsPage, (state) => state.planets, getPlanets);
-const VehiclesPageWithData = withData(VehiclesPage, (state) => state.vehicles, getVihicles);
+const FilmsPageWithData = withData(FilmsPage, getFilmsSelector, getFilms);
+const CharactersPageWithData = withData(CharactersPage, getPeopleSelector, getPeople);
+const StarshipsPageWithData = withData(StarshipsPage, getStarshipsSelector, getStarships);
+const PlanetsPageWithData = withData(PlanetsPage, getPlanetsSelector, getPlanets);
+const VehiclesPageWithData = withData(VehiclesPage, getPlanetsVehicle, getVihicles);
 const FilmDetailsPageWithDetailsData = withDetailsData(
   FilmDetailsPage,
-  (state) => state.filmDetails,
+  getFilmDetailsSelector,
   getDetailsFilm,
   getDetailsFilmSuccess,
   getDetailsFilmFailure,
@@ -56,7 +65,7 @@ const FilmDetailsPageWithDetailsData = withDetailsData(
 
 const CharacterDetailsPageWithDetailsData = withDetailsData(
   CharacterDetailsPage,
-  (state) => state.characterDetails,
+  getCharacterDetailsSelector,
   getCharacterDetails,
   getCharacterDetailsSuccess,
   getCharacterDetailsFailure,
@@ -65,7 +74,7 @@ const CharacterDetailsPageWithDetailsData = withDetailsData(
 
 const StarshipDetailsPageWithDetailsData = withDetailsData(
   StarshipDetailsPage,
-  (state) => state.starshipDetails,
+  getStarshipDetailsSelector,
   getStarshipDetails,
   getStarshipDetailsSuccess,
   getStarshipDetailsFailure,
@@ -74,7 +83,7 @@ const StarshipDetailsPageWithDetailsData = withDetailsData(
 
 const PlanetDetailsPageWithDetailsData = withDetailsData(
   PlanetDetailsPage,
-  (state) => state.planetDetails,
+  getPlanetDetailsSelector,
   getPlanetDetails,
   getPLanetDetailsSuccess,
   getPLanetDetailsFailure,
@@ -83,7 +92,7 @@ const PlanetDetailsPageWithDetailsData = withDetailsData(
 
 const VehicleDetailsPageWithDetailsData = withDetailsData(
   VehicleDetailsPage,
-  (state) => state.vehicleDetails,
+  getVehicleDetailsSelector,
   getVehicleDetails,
   getVehicleDetailsSuccess,
   getVehicleDetailsFailure,

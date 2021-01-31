@@ -42,12 +42,14 @@ const columns = [
       item,
       collapse,
       collapsed,
-               characters
+               characters,
+               loading
     }: {
       item: FilmsTypes;
       collapse: boolean;
       collapsed?(): void;
-      characters: PeopleTypes[]
+      characters: PeopleTypes[],
+      loading: boolean
     }) => (
       <ColumnItem
         title="Characters"
@@ -55,6 +57,7 @@ const columns = [
         collapse={collapse}
         collapsed={collapsed}
         characters={characters}
+        loading={loading}
       />
     )
   },

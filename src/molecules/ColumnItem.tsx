@@ -7,9 +7,9 @@ interface ColumnItemProps {
   collapse?: boolean;
 
   collapsed?(): void;
-
+  loading?: boolean;
   value: any;
-  characters?: PeopleTypes[]
+  characters?: PeopleTypes[];
 }
 
 const WrapperColumnItem = styled.div<{ collapse?: boolean; length?: number }>`
@@ -44,14 +44,24 @@ const StyledList = styled.div<{ length: number }>`
   width: 100%;
 `;
 
-const ColumnItem: React.FC<ColumnItemProps> = ({ title, value, collapse, collapsed, characters }) => (
+const ColumnItem: React.FC<ColumnItemProps> = ({
+  title,
+  value,
+  collapse,
+  collapsed,
+  characters,
+  loading
+}) => (
   <>
     <WrapperColumnItem collapse={collapse} length={value.length} onClick={collapsed}>
       <span className="title">{title}</span>
-      {Array.isArray(value) ? <div className="arrow-up"/> : value}
+      {Array.isArray(value) ? <div className="arrow-up" /> : value}
     </WrapperColumnItem>
     {characters ? (
-      <StyledList length={value.length}>{collapse && characters.length !== 0 ? characters[0].name : null}</StyledList>
+      <StyledList length={value.length}>
+        {loading ? '3' : null}
+        {collapse && characters.length !== 0 ? characters[0].name : null}
+      </StyledList>
     ) : null}
   </>
 );

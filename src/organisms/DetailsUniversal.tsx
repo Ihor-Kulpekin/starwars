@@ -25,7 +25,7 @@ const WrapperUniversal = styled.div`
 const DetailsUniversal: React.FC<DetailsUniversalProps> = ({ item, columns }) => {
   const [collapse, setCollapse] = useState(false);
   const dispatch = useDispatch();
-  const {characters} = useSelector((state: RootState) => state.filmDetails)
+  const {characters, loading} = useSelector((state: RootState) => state.filmDetails)
 
   const collapsed = () => {
     if(characters.length===0){
@@ -46,7 +46,8 @@ const DetailsUniversal: React.FC<DetailsUniversalProps> = ({ item, columns }) =>
                     item,
                     collapsed,
                     collapse,
-                    characters
+                    characters,
+                    loading
                   })
                 ):(
                   column.render({

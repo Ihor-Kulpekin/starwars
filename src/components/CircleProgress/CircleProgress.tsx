@@ -5,6 +5,7 @@ export const CircleProgress = styled.div`
   font-size: 11px;
   text-indent: -99999em;
   margin: 5em auto;
+  background-color: black;
   position: relative;
   width: 10em;
   height: 10em;
@@ -23,7 +24,7 @@ export const CircleProgress = styled.div`
   :before {
     width: 5.2em;
     height: 10.2em;
-    background: black;
+    background: gray;
     border-radius: 10.2em 0 0 10.2em;
     top: -0.1em;
     left: -0.1em;
@@ -36,7 +37,7 @@ export const CircleProgress = styled.div`
   :after {
     width: 5.2em;
     height: 10.2em;
-    background: black;
+    background: gray;
     border-radius: 0 10.2em 10.2em 0;
     top: -0.1em;
     left: 5.1em;
