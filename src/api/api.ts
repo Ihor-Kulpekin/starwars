@@ -8,12 +8,12 @@ const getData = async (url: string, search?: string) => {
 };
 
 export const getFilms = async (search?: string) => {
-  const url = 'https://swapi.dev/api/films';
+  const url = 'https://swapi.dev/api/films/';
   return await getData(url, search);
 };
 
 export const getDetails = async (url: string, id: string) => {
-  return await getData(`${url}${id}`)
+  return await getData(`${url}${id}/`)
 }
 
 export const getPeople = async (search?: string) => {
