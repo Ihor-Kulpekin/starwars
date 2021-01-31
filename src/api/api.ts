@@ -7,11 +7,6 @@ const getData = async (url: string, search?: string) => {
   return await response.json();
 };
 
-export const getFilms = async (search?: string) => {
-  const url = 'https://swapi.dev/api/films/';
-  return await getData(url, search);
-};
-
 export const getDetails = async (url: string, id: string) => {
   return await getData(`${url}${id}/`)
 }
@@ -19,26 +14,6 @@ export const getDetails = async (url: string, id: string) => {
 export const getListData = async (url:string, search?:string) =>{
   return await getData(`${url}`, search)
 }
-
-export const getPeople = async (search?: string) => {
-  const url = 'https://swapi.dev/api/people/';
-  return await getData(url, search);
-};
-
-export const getStarships = async (search?: string) => {
-  const url = 'https://swapi.dev/api/starships/';
-  return await getData(url, search);
-};
-
-export const getPlanets = async (search?: string) => {
-  const url = 'https://swapi.dev/api/planets/';
-  return await getData(url, search);
-};
-
-export const getVehicles = async (search?: string) => {
-  const url = 'https://swapi.dev/api/vehicles/';
-  return await getData(url, search);
-};
 
 export const getDataForDetailsItem = async (strings: string[]) => {
   return await Promise.all(strings.map(async (string) => await getData(string)));

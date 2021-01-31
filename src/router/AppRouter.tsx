@@ -59,6 +59,7 @@ const CharacterDetailsPage = lazy(() => import('pages/CharacterDetailsPage/Chara
 const StarshipDetailsPage = lazy(() => import('pages/StarshipDetailsPage/StarshipDetailsPage'));
 const PlanetDetailsPage = lazy(() => import('pages/PlanetDetailsPage/PlanetDetailsPage'));
 const VehicleDetailsPage = lazy(() => import('pages/VehicleDetailsPage/VehicleDetailsPage'));
+const LoginPage = lazy(()=>import('pages/Login/LoginPage'))
 
 const FilmsPageWithData = withData(
   FilmsPage,
@@ -181,6 +182,9 @@ const AppRouter = () => (
       </PublicRoute>
       <PublicRoute path="/vehicles/:id" exact={true}>
         <VehicleDetailsPageWithDetailsData />
+      </PublicRoute>
+      <PublicRoute path="/login" exact={true}>
+        <LoginPage />
       </PublicRoute>
     </Switch>
   </Suspense>

@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import LoginForm from 'components/LoginForm/LoginForm';
 import { LoginTypes } from 'types/LoginTypes';
 import useMedia from 'utils/useMedia';
-import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 const WrapperLogin = styled.div`
@@ -18,17 +17,7 @@ const WrapperLogin = styled.div`
 const LoginPage = () => {
   const { mobile } = useMedia();
   const initialValues: LoginTypes = { login: '', sublogin: '', password: '' };
-  const dispatch = useDispatch();
-  const loading = useSelector((state: any) => state.auth.loading);
-  const isLoggedIn = useSelector((state: any) => !!state.auth.sessionKey?.length);
   const history = useHistory();
-  console.log(loading);
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      history.push('/console');
-    }
-  }, [isLoggedIn]);
 
   const doLogin = ({login, sublogin, password}:{login: string, sublogin: string, password: string}) => {
       console.log(login, sublogin, password)
