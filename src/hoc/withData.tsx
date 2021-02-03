@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store/store';
 import styled from 'styled-components';
+import Input from '../molecules/Input';
 
 export const WrapperList = styled.ul`
   display: flex;
@@ -22,18 +23,27 @@ const withData = (
 ) => {
   return () => {
     const data = useSelector<RootState>(selector);
+    const [value, setValue] = useState('');
     const dispatch = useDispatch();
 
-    const fetchData = () => {
-      dispatch(action('',actionSuccess, actionFailure, url));
+    const fetchData = (value?:string) => {
+      dispatch(action(value,actionSuccess, actionFailure, url));
     };
+
+    const handleChange = (event:React.ChangeEvent<HTMLInputElement>):void => {
+      setValue(event.target.value)
+      fetchData(event.target.value)
+    }
 
     useEffect(fetchData, [dispatch]);
 
     return (
-      <WrapperList>
-        <Component data={data} />
-      </WrapperList>
+      <>
+        <Input value={value} onChange={handleChange} placeholder="Search..."/>
+        <WrapperList>
+          <Component data={data} />
+        </WrapperList>
+      </>
     );
   };
 };

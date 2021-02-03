@@ -29,7 +29,7 @@ const WrapperInput = styled.div`
 `;
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
-  label: string;
+  label?: string;
   optional?: boolean;
 }
 
@@ -45,7 +45,7 @@ const Input: React.FC<InputProps> = ({
 }) => (
   <WrapperInput>
     <div className="wrapperLabel">
-      <label className="label">{label}</label>
+      {label?<label className="label">{label}</label>:null}
       {optional ? <label className="label">optional</label> : null}
     </div>
     <input
