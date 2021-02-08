@@ -1,41 +1,66 @@
-const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.tsx',
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 8086,
-    lazy: true,
-    liveReload: true,
-    filename: 'index.html'
+  entry: {
+    bundle: './src/index.tsx',
+    vendor: [
+      'react-lazyload',
+      'redux',
+      'redux-saga',
+      'reselect',
+      'styled-components',
+      'typescript',
+      'react-redux',
+      'styled-normalize',
+      'react-router-dom',
+      'react'
+    ]
   },
+  mode: 'development',
   module: {
     rules: [
       {
-        test: [/\.tsx?$/, /\.ts?$/],
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true
-            }
-          }
-        ],
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/
       },
-      { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader?name=app/images/[name].[ext]' }
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      }
     ]
   },
   optimization: {
-    runtimeChunk: true
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
   },
+  plugins:[
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+      filename: "./index.html",
+      favicon: "./public/favicon.ico"
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
+  ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    modules: ['node_modules', 'src'],
+    extensions: ['.tsx', '.ts', '.js']
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: './[name].[chunkhash].js'
   }
 };

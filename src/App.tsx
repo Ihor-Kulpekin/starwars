@@ -7,6 +7,7 @@ import { store } from './store/store';
 import AppRouter from './router/AppRouter';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import ErrorBoundary from './components/ErrorBoundaty/ErrorBoundary';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
       <GlobalStyle />
       <Header />
       <Provider store={store}>
-        <AppRouter />
+        <ErrorBoundary>
+          <AppRouter />
+        </ErrorBoundary>
       </Provider>
       <Footer />
     </Router>
